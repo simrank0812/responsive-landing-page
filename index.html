@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111827;
+      color: #fff;
+    }
+
+    /* Navigation */
+    #navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      z-index: 999;
+    }
+
+    #navbar.scrolled {
+      background: #1f2937;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #60a5fa;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #d1d5db;
+    }
+
+    /* Extra Sections for Scrolling */
+    .section {
+      height: 100vh;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .section:nth-child(even) {
+      background-color: #1f2937;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      max-width: 600px;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="logo">MyLogo</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to My Landing Page</h1>
+    <p>This is a simple, clean, responsive web page with scroll interaction.</p>
+  </section>
+
+  <!-- Additional Scrollable Sections -->
+  <section class="section">
+    <h2>About Us</h2>
+    <p>We offer creative web development solutions for startups, businesses, and individuals.</p>
+  </section>
+
+  <section class="section">
+    <h2>Our Services</h2>
+    <p>From responsive websites to full-stack applications — we cover it all with passion.</p>
+  </section>
+
+  <section class="section">
+    <h2>Contact</h2>
+    <p>Have a project in mind? Get in touch with us today and let's build something great!</p>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
